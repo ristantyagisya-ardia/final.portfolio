@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Gisya</title>
+    <link rel="icon" href="img/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Kapakana&family=Teko:wght@400;500;600;700&family=Passion+One&family=Poppins&display=swap" rel="stylesheet">
+
+    <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom,
+        #ffffff 0%,       /* Hitam */
+        #ffc8d7 15%,      /* Coklat tua */
+        #fff3d3 30%,      /* Ungu gelap penghubung */
+        #f4fdff 50%,      /* Navy */
+        #f4e2d2 70%,      /* Neon pink */
+        #f7c2db 85%,      /* Soft pink */
+        #FFDDE1 100%      /* Pink pastel */
+      );
+      animation: gradientFlow 25s ease infinite;
+      background-size: 100% 200%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .fade-in-text {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in-text.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* === NAVIGATION === */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1vw 5vw;
+      background-color: #ffdee9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      font-family: 'Teko', sans-serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #c81d6a;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 2vw;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #c81d6a;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+    }
+
+    /* === SECTION === */
+    section {
+      padding: 8vw 5vw;
+      position: relative;
+    }
+
+    /* === SECTION - ABOUT === */
+    #tentang-saya {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      padding-top: 6rem;
+    }
+
+    /* === FOTO & NAMA === */
+    .foto {
+      flex: 1 1 200px;
+      max-width: 350px;
+      text-align: center;
+    }
+
+    .nama {
+      text-align: center;
+      margin-top: 1vw;
+    }
+    .nama h2 {
+    font-size: 60px;
+      animation: fadeIn 1.5s ease forwards;
+       transform: translateY(30px); 
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+       .nama h3 {
+       font-size: 80px;
+      background: linear-gradient(90deg, #ff0576, #ff0576, #f3f2f2, #e7a0d2, #ff0576,#ff0576);
+      background-size: 300% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: flow 7s linear infinite;             
+    }
+
+    .font-kapakana {
+      font-family: 'Kapakana', sans-serif;    
+    }
+
+    .font-passion {
+      font-family: 'Passion One', cursive;
+      text-transform: uppercase;
+    }
+
+    .font-anton {
+      font-family: 'Anton', sans-serif;
+    }
+
+    .font-abril {
+      font-family: 'Abril Fatface', serif;
+      color: rgb(253, 8, 159);
+    }
+
+    @keyframes flow {
+      0% {
+        background-position: 0% center;
+      }
+      100% {
+        background-position: 300% center;
+      }
+    }
+    .nama h4 {
+      animation: slideInLeft 1s ease-out forwards;          
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .font-kapakana {
+      font-size: 1.4rem;
+      color: #796262;
+    }
+    .font-passion {
+      font-size: 3rem;
+      color: #c81d6a;
+      font-weight: bold;
+    }
+    .font-anton {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+    }
+    .font-poppins {
+      font-size: 1rem;
+      margin-top: 1vw;
+      color: #666;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* === CARD === */
+    .card img {
+      position: absolute;
+      top: -1rem;
+      right: 1rem;
+      width: 250px;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      transition: background-color 0.5s ease;
+      z-index: 10;
+      animation: swing 3s ease-in-out infinite;
+        }
+      
+      @keyframes swing {
+        0% {
+          transform: rotate(2deg);
+        }
+        50% {
+          transform: rotate(-2deg);
+        }
+        100% {
+          transform: rotate(2deg);
+        }
+      }
+
+/* === SLIDER TEXT === */
+    .slider-container, .slider-container2, .slider-container3 {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #ff77a6;
+      padding: 1vw 0;
+      margin: 3vw 0;
+      position: relative;
+    }
+
+    .slider-track {
+      display: flex;
+      animation: marquee 15s linear infinite;
+    }
+    .slider-track2 {
+      display: flex;
+      animation: marquee 10s linear infinite;
+    }
+    .slider-track3 {
+      display: flex;
+      animation: marquee 5s linear infinite;
+    }
+
+    .slider-track span, .slider-track2 span, .slider-track3 span {
+      margin: 0 2vw;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .slider-container {
+      position: relative;
+    }
+
+    .slider-container-wrapper {
+      position: relative;
+      margin: 3vw 0;
+    }
+
+    .slider-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background: #ff77a6;
+      padding: 1vw 0;
+    }
+
+    .keychain-wrapper {
+      position: absolute;
+      top: 60px; 
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 2vw;
+      z-index: 10;
+      transform: rotate(-3deg);
+    }
+
+    .keychain {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .keychain .ring {
+      width: 20px;
+      height: 20px;
+      border: 4px solid #fe017b;
+      border-radius: 50%;
+      background: #fee8f3;
+    }
+
+    .keychain .string {
+      width: 4px;
+      height: 30px;
+      background: #fe017b;
+    }
+
+    .keychain .photo {
+      width: 70px;
+      height: 90px;
+      background: #fff;
+      border: 3px solid #fe017b;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .keychain .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @media (max-width: 480px) {
+      .keychain-wrapper {
+        top: 5vw;
+        gap: 3vw;
+      }
+
+      .keychain .string {
+        height: 10vw;
+      }
+
+      .keychain .photo {
+        width: 24vw;
+        height: 30vw;
+      }
+
+      .keychain .ring {
+        width: 8vw;
+        height: 8vw;
+      }
+    }
+
+/* === HOBI === */
+    .hobi {
+      text-align: center;
+      margin-bottom: 2vw;
+    }
+    .hobi h2, .hobi h3, .hobi h4 {
+      font-size: 3rem;
+      color: #ff4d9d;
+    }
+    .hobi-list li {
+      margin-bottom: 1vw;
+      padding-left: 1vw;
+      list-style: disc;
+      color: #444;
+    }
+
+    .ticket-1 img {
+      width: 350px;
+      display: block;
+      margin: 0 auto 2vw;
+      transform: rotate(-7deg);
+    }
+
+    .container-card {
+      display: flex;
+      justify-content: center;
+      gap: 2vw;
+      flex-wrap: wrap;
+    }
+    .flip-card {
+      background-color: transparent;
+      width: 300px;
+      height: 400px;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.show-back .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 1vw;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .flip-card-back {
+      background: #ffdee9;
+      transform: rotateY(180deg);
+      padding: 2vw;
+    }
+
+    .card-full-img1,
+    .card-full-img2 {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @keyframes float-up-down {
+      0%, 100% {
+        transform: translateY(0) rotateY(180deg);
+      }
+      50% {
+        transform: translateY(-10px) rotateY(180deg);
+      }
+    }
+
+    .flip-card.flip-final .flip-card-inner {
+      transform: rotateY(180deg);
+      animation: float-up-down 2s ease-in-out infinite;
+    }
+
+    .flip-card.flip-start .flip-card-inner {
+      animation: double-flip 2s ease forwards;
+    }
+
+    @keyframes double-flip {
+      0% {
+        transform: rotateY(0deg);
+      }
+      50% {
+        transform: rotateY(180deg);
+      }
+      100% {
+        transform: rotateY(360deg);
+      }
+    }
+
+    .timeline-entry {
+      margin-bottom: 2.5vw;
+    }
+    .timline-entry .date {
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+/* === COUNTER === */
+    .counter-box {
+      background: #fff0f6;
+      padding: 2vw;
+      margin: 1vw;
+      border-radius: 1vw;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .counter-box .number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #c81d6a;
+    }
+    .counter-box .desc {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 1vw;
+    }
+    .counter-box .desc2 {
+      font-size: 0.9rem;
+      margin-top: 0.5vw;
+      color: #555;
+    }
+
+    .counter-image {
+      margin-top: 3vw;
+      text-align: center;
+    }
+
+    .counter-image img {
+      max-width: 40%;
+      height: auto;
+      border-radius: 1vw;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      transform: translateX(30%);
+    }
+
+    .counter-image img:hover {
+      transform: scale(1.02);
+    }
+
+/* === PROYEK === */
+    .judulproyek h2 {
+          font-size: 1.3vw;
+          color: rgb(0, 0, 0);
+          text-align: center;
+          height: 8vw;
+        }
+    .kotak-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2vw;
+      justify-content: center;
+      margin-top: 3vw;
+    }
+    .kotak {
+      background: linear-gradient(145deg, #ffe1e1, #ffc2c2);
+      border-radius: 1.5vw;
+      padding: 2vw;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(200, 29, 106, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .kotak:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(200, 29, 106, 0.3);
+    }
+
+    .kotak h3 {
+        font-size: 1.8vw;
+      }
+      .kotak h4 {
+        font-weight: normal;
+      }
+    .kotak button {
+      margin-top: 1vw;
+      padding: 0.5vw 1vw;
+      background: #c81d6a;
+      border: none;
+      color: #fff;
+      border-radius: 0.5vw;
+      cursor: pointer;
+    }
+    .btn-kembali {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5vw;
+      padding: 0.8vw 1.5vw;
+      background: linear-gradient(135deg, #c81d6a, #a90046);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 2vw;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(200, 29, 106, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .btn-kembali:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(200, 29, 106, 0.3);
+      background: linear-gradient(135deg, #a90046, #c81d6a);
+    }
+
+/* === HALAMAN PROYEK === */
+    .halaman-proyek {
+      display: none;
+      padding: 4vw 5vw;
+    }
+    .halaman-proyek.active {
+      display: block;
+    }
+    .grid-konten {
+      display: grid;
+      gap: 2vw;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        transform: translate(80%, -50%);
+        font-size: 1.5vw;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 1.5vw;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+        z-index: 1000;
+      }
+
+      .play-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+      }
+
+      .play-button.hidden {
+        display: none;
+        z-index: 1000;
+      }
+
+    .deskripsi {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1vw;
+      background: rgba(255, 255, 255, 0.9); /* semi transparan */
+      color: #333;
+      font-size: 0.9rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      pointer-events: none;
+    }
+
+    .konten-item,
+      .konten-itemsosmed,
+      .konten-itemlabel1,
+      .konten-itemlabel2,
+      .konten-itemlabel3,
+      .konten-itemlabel4,
+      .konten-itemlabel5,
+      .konten-itemlabel6,
+      .konten-itemposter1,
+      .konten-itemposter2,
+      .konten-itemposter3,
+      .konten-itemproduk,
+      .video-container {
+        background: #eceeef;
+        border-radius: 1vw;
+        text-align: center;
+        overflow: hidden;
+        padding-bottom: 1vw;
+        width: 18vw;
+        height: auto;
+      }
+
+      .image-wrapper,
+      .image-wrappersosmed,
+      .image-wrapperlabel1,
+      .image-wrapperlabel2,
+      .image-wrapperlabel3,
+      .image-wrapperlabel4,
+      .image-wrapperlabel5,
+      .image-wrapperlabel6,
+      .image-wrapperposter1,
+      .image-wrapperposter2,
+      .image-wrapperposter3,
+      .image-wrapperproduk {
+        position: relative;
+        width: 105%;
+        overflow: hidden;
+        border-radius: 1vw 1vw 0 0;
+        margin: 1vw auto 0 auto;
+      }
+
+      .image-wrapper img,
+      .image-wrappersosmed img,
+      .image-wrapperlabel1 img,
+      .image-wrapperlabel2 img,
+      .image-wrapperlabel3 img,
+      .image-wrapperlabel4 img,
+      .image-wrapperlabel5 img,
+      .image-wrapperlabel6 img,
+      .image-wrapperposter1 img,
+      .image-wrapperposter2 img,
+      .image-wrapperposter3 img,
+      .image-wrapperproduk img {
+        width: 100%;
+        display: block;
+        border-radius: 1vw 1vw 0 0;
+      }
+
+      .image-wrapper .deskripsi,
+      .image-wrappersosmed .deskripsi,
+      .image-wrapperlabel1 .deskripsi,
+      .image-wrapperlabel2 .deskripsi,
+      .image-wrapperlabel3 .deskripsi,
+      .image-wrapperlabel4 .deskripsi,
+      .image-wrapperlabel5 .deskripsi,
+      .image-wrapperlabel6 .deskripsi,
+      .image-wrapperposter1 .deskripsi,
+      .image-wrapperposter2 .deskripsi,
+      .image-wrapperposter3 .deskripsi,
+      .image-wrapperproduk .deskripsi {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.7);
+        color: #fff;
+        padding: 1vw;
+        font-size: 1vw;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .image-wrapper:hover .deskripsi,
+      .image-wrappersosmed:hover .deskripsi,
+      .image-wrapperlabel1:hover .deskripsi,
+      .image-wrapperlabel2:hover .deskripsi,
+      .image-wrapperlabel3:hover .deskripsi,
+      .image-wrapperlabel4:hover .deskripsi,
+      .image-wrapperlabel5:hover .deskripsi,
+      .image-wrapperlabel6:hover .deskripsi,
+      .image-wrapperposter1:hover .deskripsi,
+      .image-wrapperposter2:hover .deskripsi,
+      .image-wrapperposter3:hover .deskripsi,
+      .image-wrapperproduk:hover .deskripsi {
+        opacity: 1;
+      }
+
+      .konten-item h4,
+      .konten-itemsosmed h4,
+      .konten-itemlabel1 h4,
+      .konten-itemlabel2 h4,
+      .konten-itemlabel3 h4,
+      .konten-itemlabel4 h4,
+      .konten-itemlabel5 h4,
+      .konten-itemlabel6 h4,
+      .konten-itemposter1 h4,
+      .konten-itemposter2 h4,
+      .konten-itemposter3 h4,
+      .konten-itemproduk h4 {
+        margin: 1vw 0 0.5vw;
+        font-size: 1.1vw;
+        position: relative;
+        top: 0.5vw;
+      }
+
+      .video-container {
+        max-width: 32vw;
+        height: auto;
+        position: relative;
+          overflow: visible;
+      }
+
+      video {
+        width: 100%;
+        display: block;
+        border-radius: 1vw;
+      }
+
+      .video-wrapper {
+        text-align: center;
+      }
+
+/* === KONTAK === */
+     .contact-box {
+        position: relative;
+        bottom: 0.7vw;
+        right: -1vw;
+        background: rgba(221, 43, 103, 0.822);
+        border-radius: 1.4vw;
+        padding: 2.5vw 2vw;
+        width: 90vw;
+        max-width: 80vw;
+        box-shadow: 0 0.6vw 2vw rgba(187, 32, 32, 0.5);
+        backdrop-filter: blur(1vw);
+        z-index: 1;
+      }
+
+      .contact-box h2 {
+        color: #fff;
+        text-align: center;
+        margin-bottom: 2vw;
+        letter-spacing: 0.1vw;
+        font-size: 3vw;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1vw;
+        margin: 1.4vw 0;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 1vw 1.4vw;
+        border-radius: 1vw;
+        transition: 0.3s ease;
+      }
+
+      .contact-item:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .contact-item img {
+        width: 2.4vw;
+        height: 2.4vw;
+        filter: drop-shadow(0 0 0.2vw #0005);
+      }
+
+      .contact-item a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.4vw;
+      }
+
+      .contact-item a:hover {
+        text-decoration: underline;
+      }
+
+      .marquee-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2vw;
+        position: relative;
+        bottom: 6vw;
+        right: 11vw;
+      }
+
+      .marquee {
+        position: relative;
+        width: 100vw;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .marquee-track {
+        display: inline-flex;
+        width: max-content;
+      }
+
+      .marquee-track a {
+        display: inline-block;
+        margin: 0.6vw 1vw;
+        padding: 1vw 2vw;
+        border-radius: 3vw;
+        font-size: 1vw;
+        font-weight: 500;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        transition: transform 0.2s;
+      }
+
+      .marquee-track a:hover {
+        transform: scale(1.05);
+        text-decoration: underline;
+      }
+
+      /* Color Styles */
+      .blue { background-color: #b9d1e8; }
+      .yellow { background-color: #fffeca; }
+      .pink { background-color: #eb94c5; }
+
+      /* Animations */
+      @keyframes scroll-right {
+        0% { transform: translateX(-50%); }
+        100% { transform: translateX(0%); }
+      }
+
+      @keyframes scroll-left {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+
+      .marquee-right .marquee-track {
+        animation: scroll-right 30s linear infinite;
+      }
+
+      .marquee-left .marquee-track {
+        animation: scroll-left 30s linear infinite;
+      }
+
+/* === FOOTER === */
+      footer {
+        background-color: #f60087;
+        color: #bbb;
+        padding: 1vw;
+        position: relative;
+      }
+
+      .scroll-top-btn {
+        position: absolute;
+        bottom: 2vw;
+        left: 2vw;
+        background-color: #f5b700;
+        color: #000;
+        border: none;
+        padding: 1vw 1.6vw;
+        border-radius: 3vw;
+        font-size: 1vw;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 0.4vw 1vw rgba(0,0,0,0.3);
+        display: flex;
+        align-items: center;
+        gap: 0.6vw;
+        transition: background 0.3s ease;
+      }
+
+      .scroll-top-btn:hover {
+        background-color: #ffd43b;
+      }
+
+      .scroll-top-btn svg {
+        width: 1.2vw;
+        height: 1.2vw;
+        fill: #000;
+      }
+
+      .footer-text {
+        text-align: center;
+        padding-top: 2vw;
+        font-size: 1.3vw;
+        color: #ffffff;
+      }
+
+    @media screen and (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 1vw;
+      }
+      .container-card {
+        flex-direction: column;
+      }
+      .kotak {
+        width: 100%;
+      }
+    }
+
+    .hide {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 991px) {
+        .hide, .hide-tablet {
+            display: none !important;
+        }
+    }
+      @media screen and (max-width: 767px) {
+        .hide-mobile-landscape{
+          display: none !important;
+        }
+    }
+      @media screen and (max-width: 479px) {
+        .hide-mobile{
+          display: none !important;
+        }
+    }
+    
+    .margin-0 {
+      margin: 0rem !important;
+    }
+      
+    .padding-0 {
+      padding: 0rem !important;
+    }
+
+    .spacing-clean {
+    padding: 0rem !important;
+    margin: 0rem !important;
+    }
+
+    .margin-top {
+      margin-right: 0rem !important;
+      margin-bottom: 0rem !important;
+      margin-left: 0rem !important;
+    }
+
+    .padding-top {
+      padding-right: 0rem !important;
+      padding-bottom: 0rem !important;
+      padding-left: 0rem !important;
+    }
+      
+    .margin-right {
+      margin-top: 0rem !important;
+      margin-bottom: 0rem !important;
+      margin-left: 0rem !important;
+    }
+
+    .padding-right {
+      padding-top: 0rem !important;
+      padding-bottom: 0rem !important;
+      padding-left: 0rem !important;
+    }
+
+    .margin-bottom {
+      margin-top: 0rem !important;
+      margin-right: 0rem !important;
+      margin-left: 0rem !important;
+    }
+
+    .padding-bottom {
+      padding-top: 0rem !important;
+      padding-right: 0rem !important;
+      padding-left: 0rem !important;
+    }
+
+    .margin-left {
+      margin-top: 0rem !important;
+      margin-right: 0rem !important;
+      margin-bottom: 0rem !important;
+    }
+      
+    .padding-left {
+      padding-top: 0rem !important;
+      padding-right: 0rem !important;
+      padding-bottom: 0rem !important;
+    }
+      
+    .margin-horizontal {
+      margin-top: 0rem !important;
+      margin-bottom: 0rem !important;
+    }
+
+    .padding-horizontal {
+      padding-top: 0rem !important;
+      padding-bottom: 0rem !important;
+    }
+
+    .margin-vertical {
+      margin-right: 0rem !important;
+      margin-left: 0rem !important;
+    }
+      
+    .padding-vertical {
+      padding-right: 0rem !important;
+      padding-left: 0rem !important;
+    }
+
+    /* Apply "..." at 100% width */
+    .truncate-width { 
+        width: 100%; 
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        overflow: -moz-scrollbars-none; 
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .theme-toggle {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background-color: #333;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      padding: 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .theme-toggle .icon {
+      position: absolute;
+      top: 50%; /* Posisi vertikal ke tengah */
+      transform: translateY(-50%);
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      font-size: 16px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .theme-toggle .moon {
+      left: 4px;
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    .theme-toggle .sun {
+      right: 4px;
+      opacity: 0;
+      transform: translate(100%, -50%);
+    }
+
+    body.dark-mode .theme-toggle .moon {
+      opacity: 0;
+      transform: translate(-100%, -50%);
+    }
+
+    body.dark-mode .theme-toggle .sun {
+      opacity: 1;
+      transform: translate(0, -50%);
+    }
+
+    body.dark-mode .theme-toggle {
+      background-color: #ddd;
+    }
+
+/* === DARK MODE STYLING === */
+  body.dark-mode {
+  background: linear-gradient(to bottom,
+    #000000 0%,       /* Hitam */
+    #4E342E 15%,      /* Coklat tua */
+    #3E1F47 30%,      /* Ungu gelap penghubung */
+    #001f3f 50%,      /* Navy */
+    #ff0e7f 70%,      /* Neon pink */
+    #FF7EB3 85%,      /* Soft pink */
+    #FFDDE1 100%      /* Pink pastel */
+  );
+   animation: gradientFlow 25s ease infinite;
+  background-size: 100% 200%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #ffffff;
+}
+
+      body.dark-mode .navbar {
+        background-color: #1f1f1f;
+        border-bottom: 1px solid #444;
+      }
+
+      body.dark-mode .nav-links a {
+        color: #f1f1f1;
+      }
+
+      body.dark-mode .section,
+      body.dark-mode section {
+        color: #f1f1f1;
+      }
+      body.dark-mode .font-kapakana {
+        color: #ffffff;
+      }
+      body.dark-mode .font-anton {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #ffffff;
+      }
+      body.dark-mode .nama p {
+        color: #ffffff;
+      }
+      body.dark-mode .font-poppins {
+        color: #ffffff;
+      }
+      body.dark-mode .font-abril {
+            color: #ff34a7;
+          }
+
+      body.dark-mode .counter-box {
+        background-color: #ffffff;
+        color: #141313;
+        border: 1px solid #333;
+      }
+
+      body.dark-mode .flip-card-front,
+      body.dark-mode .flip-card-back {
+        background-color: #222;
+        color: #eee;
+      }
+
+      body.dark-mode .slider-container,
+      body.dark-mode .slider-container2,
+      body.dark-mode .slider-container3 {
+        background: #1a1a1a;
+      }
+
+      body.dark-mode .slider-track span,
+      body.dark-mode .slider-track2 span,
+      body.dark-mode .slider-track3 span {
+        color: #ff006f;
+      }
+
+      body.dark-mode .hobi h2, .hobi h3, .hobi h4 {
+        color: #ff34a7;
+      }
+
+      body.dark-mode .hobi-list li {
+        color: #ffffff;
+      }
+
+      body.dark-mode .judulproyek h2 {
+        color: #ffffff;
+      }
+      body.dark-mode .kotak {
+        background: #ffffff;
+      }
+      body.dark-mode .halaman-proyek h4 {
+        color: #000000;
+      }
+
+      body.dark-mode .marquee-track a {
+        color: #000000;
+      }
+
+      body.dark-mode footer {
+        background-color: #5f4747;
+        color: #bbb;
+      }
+
+      body.dark-mode .scroll-top-btn {
+        background-color: #cd821a;
+        color: #fff;
+      }
+
+      body.dark-mode .kotak,
+      body.dark-mode .contact-box {
+        background-color: #1c1c1c;
+        border: 1px solid #333;
+        color: #f5f5f5;
+      }
+
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <button class="theme-toggle" id="themeToggle">
+  <span class="icon moon">🌙</span>
+  <span class="icon sun">☀︎</span>
+</button>
+
+      <div class="logo">Ristantya Gisya Ardia</div>
+      <ul class="nav-links">
+        <li><a href="#tentang-saya">Tentang Saya</a></li>
+        <li><a href="#keahlian">Keahlian</a></li>
+        <li><a href="#proyek">Proyek</a></li>
+        <li><a href="#kontak">Kontak</a></li>
+      </ul>
+    </nav>
+
+    <!-- SECTION 1 - ABOUT ME -->
+    <section id="tentang-saya">
+      <div class="foto">
+        <img src="img/bingkaift.png" alt="Foto Profil" class="foto" />
+      </div>
+
+      <div class="nama">
+        <h2 class="font-kapakana">hallo, i'm </h2>
+        <h3 class="font-passion">GISYA</h3>
+        <h4 class="font-anton">Supplier Label & Graphic Designer</h4>
+        <p class="font-poppins">
+          Supplier label sekaligus graphic designer yang berfokus pada solusi
+          cetak kreatif dan fungsional. Menggabungkan keahlian produksi dengan
+          desain menarik untuk memenuhi kebutuhan branding klien secara
+          menyeluruh.
+        </p>
+      </div>
+
+      <div class="card">
+        <img src="img/Untitled-1.png" class="card" />
+      </div>
+
+      <div class="slider-container-wrapper">
+  <div class="keychain-wrapper">
+    <div class="keychain">
+      <div class="ring"></div>
+      <div class="string"></div>
+      <div class="photo">
+        <img src="img/ft1.jpeg" alt="Foto Keychain 1" />
+      </div>
+    </div>
+
+    <div class="keychain">
+      <div class="ring"></div>
+      <div class="string"></div>
+      <div class="photo">
+        <img src="img/ft2.jpeg" alt="Foto Keychain 2" />
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-container">
+        <div class="slider-track">
+          <span>welcome to my portfolio</span>
+          <span>Ristantya Gisya Ardia</span>
+          <span>welcome to my portfolio</span>
+
+          <span>Ristantya Gisya Ardia</span>
+          <span>welcome to my portfolio</span>
+          <span>Ristantya Gisya Ardia</span>
+
+          <span>welcome to my portfolio</span>
+          <span>Ristantya Gisya Ardia</span>
+          <span>welcome to my portfolio</span>
+
+          <span>Ristantya Gisya Ardia</span>
+          <span>welcome to my portfolio</span>
+          <span>Ristantya Gisya Ardia</span>
+
+          <span>welcome to my portfolio</span>
+          <span>Ristantya Gisya Ardia</span>
+          <span>welcome to my portfolio</span>
+        </div>
+      </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2 - HOBI -->
+    <section id="tentang-saya">
+      
+        <div class= "hobi" >
+          <h2 class="font-abril" class="fade-in-text">HOBI</h2>
+          <h3 class="font-abril" class="fade-in-text">dan</h3>
+          <h4 class="font-abril"class="fade-in-text">MINAT</h4>
+          </div>
+        <div class="ticket-1">
+           <img src="img/ticket.png" alt="ticket" class="ticket-1">
+           </div>
+           </div>
+          
+        <div class="hobi-list"></div>
+         <ul class="hobi-list">
+          <li>Mengikuti tren desain terbaru dan belajar teknik desain digital baru.</li>
+          <li>Eksperimen dengan warna, tipografi, dan ilustrasi untuk pengembangan label kreatif.</li>
+          <li>Fotografi produk dan pengembangan konten visual untuk
+          media sosial</li>
+        </ul>
+        </div>
+ </div>
+    </section>
+
+    <!-- SECTION 3 - PENDIDIKAN & PEKERJAAN -->
+    <section id="tentang-saya">
+      <section class="cards-section" id="flip-section">
+  <div class="container-card">
+    <!-- Flip Card 1 -->
+    <div class="flip-card left" id="card1">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="img/pendidikan.png" alt="Gambar Pendidikan" class="card-full-img1"> </div>
+        <div class="flip-card-back">
+          <div class="timeline">
+            <div class="timeline-entry">
+              <h2 class="font-abril">PENDIDIKAN</h2>
+              <h3>SMAN 1 PANDAAN</h3>
+              <div class="date">2020 - 2023</div>
+            </div>
+            <div class="timeline-entry">
+              <h3>UNIVERSITAS MERDEKA MALANG</h3>
+              <div class="date">2023 - Sekarang</div>
+              <div class="detail">(Prodi S1 Sistem Informasi)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Flip Card 2 -->
+    <div class="flip-card right" id="card2">
+      <div class="flip-card-inner">
+         <div class="flip-card-front">
+          <img src="img/pekerjaan.png" alt="Gambar pekerjaan" class="card-full-img2"> </div>
+        <div class="flip-card-back">
+          <div class="timeline">
+            <div class="timeline-entry">
+              <h2 class="font-abril">PEKERJAAN</h2>
+              <h3>SUPPLIER LABEL & GRAPHIC DESIGNER</h3>
+              <div class="date">2023 - Sekarang</div>
+              <div class="detail">Karya Label | Pasuruan</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    </section>
+
+    <!-- SECTION 4 - SKILLS & TOOLS -->
+    <section id="keahlian">
+          <div class="slider-container2">
+         <div class="slider-track2">
+      <span>Skills & Tools</span>
+      <span>Branding</span>
+      <span>Editing</span>
+      <span>Desain</span>
+      <span>Skills & Tools</span>
+
+      <span>Branding</span>
+      <span>Editing</span>
+      <span>Desain</span>
+      <span>Skills & Tools</span>
+      <span>Branding</span>
+
+      <span>Editing</span>
+      <span>Desain</span>
+      <span>Skills & Tools</span>
+      <span>Branding</span>
+      <span>Editing</span>
+      <span>Desain</span>
+
+      <span>Skills & Tools</span>
+      <span>Branding</span>
+      <span>Editing</span>
+      <span>Desain</span>
+      <span>Skills & Tools</span>
+      <span>Branding</span>
+
+    </div>
+  </div>
+
+   <section class="counter-section" id="counterSection">
+    <div class="counter-box">
+      <span class="number" data-target="98">0</span><span class="percent">%</span>
+      <div class="desc"> Branding & Packaging</div>
+      <div class="desc2">Membangun identitas merek yang kuat dan menciptakan kemasan yang menarik, fungsional, dan sesuai karakter produk untuk meningkatkan daya tarik visual dan kepercayaan konsumen.</div>
+    </div>
+    <div class="counter-box">
+      <span class="number" data-target="90">0</span><span class="percent">%</span>
+      <div class="desc">Software Desain</div>
+      <div class="desc2">Menguasai berbagai perangkat lunak desain profesional seperti Adobe Illustrator, Photoshop, dan CorelDRAW untuk menghasilkan karya berkualitas tinggi dan siap cetak.</div>
+    </div>
+    <div class="counter-box">
+      <span class="number" data-target="95" >0</span><span class="percent">%</span>
+      <div class="desc">Desain Visual & Estetika</div>
+      <div class="desc2">Menciptakan tata letak, warna, dan tipografi yang harmonis dan menarik, dengan mempertimbangkan prinsip estetika dan fungsionalitas dalam setiap karya desain.</div>
+    </div>
+    <div class="counter-box">
+      <span class="number" data-target="95">0</span><span class="percent">%</span>
+      <div class="desc">Editing</div>
+      <div class="desc2">Mengolah gambar dan elemen visual agar lebih tajam, bersih, dan komunikatif. Mulai dari retouching foto produk hingga penyesuaian warna dan komposisi desain.</div>
+    </div>
+    </div>
+    </div>
+  </section>
+ <div class="counter-image">
+  <img src="img/1.png" alt=" Tools Desain">
+</div>
+
+    <!-- SECTION 5 - MY PROJECT -->
+<section id="proyek">
+  <!-- Bagian Slider -->
+  <div class="slider-container3">
+    <div class="slider-track3">
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+      <span>My Project</span>
+    </div>
+  </div>
+
+  <!-- Judul Section -->
+   <div class="judulproyek">
+  <h2> Setiap desain adalah solusi visual.  
+    Di sini saya menggabungkan kreativitas, fungsi, dan identitas brand dalam bentuk nyata.  
+    Mulai dari label produk hingga konten digital, semua dirancang dengan detail dan tujuan.</h2>
+</div>
+
+  <!-- Kotak Proyek -->
+  <div class="kotak-container">
+    <!-- Kotak 2 -->
+    <div class="kotak">
+      <h3 class="font-abril">LABEL</h3>
+      <h4>(Label modern fokus pada brand identity yang kuat.)</h4>
+      <button onclick="bukaProyek('label')">Lihat Proyek</button>
+    </div>
+
+    <!-- Kotak 3 -->
+    <div class="kotak">
+      <h3 class="font-abril">DESAIN SOSMED</h3>
+      <h4>(Konten sosial media untuk meningkatkan branding )</h4>
+      <button onclick="bukaProyek('sosmed')">Lihat Proyek</button>
+    </div>
+
+    <!-- Kotak 4 -->
+    <div class="kotak">
+      <h3 class="font-abril">FOTO & VIDEO</h3>
+      <h4>(Fotografi dan cuplikan video pemasaran desain label dan dokumentasi kerja tim)</h4>
+      <button onclick="bukaProyek('foto')">Lihat Proyek</button>
+    </div>
+    
+    <!-- Kotak 5 -->
+    <div class="kotak">
+      <h3 class="font-abril">POSTER</h3>
+      <h4>(Poster digital dengan visual yang menarik dan informatif.)</h4>
+      <button onclick="bukaProyek('poster')">Lihat Proyek</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- HALAMAN PROYEK -->
+
+<section class="halaman-proyek" id="halaman-label">
+  <button class="btn-kembali" onclick="kembali()">&larr; Kembali</button>
+  <div class="grid-konten">
+    <div class="konten-itemlabel1">
+      <div class="image-wrapperlabel1">
+        <img src="img/ht.jpeg" alt="">
+        <div class="deskripsi">Hangtag bergaya minimalis dengan logo dan detail produk yang clean, ideal untuk produk premium.</div>
+      </div>
+      <h4>Hangtag</h4>
+    </div>
+
+      <div class="konten-itemlabel2">
+      <div class="image-wrapperlabel2">
+        <img src="img/stiker.jpeg" alt="">
+        <div class="deskripsi">Stiker berisi nomor urut produk untuk memudahkan tracking dan pengecekan stok.</div>
+      </div>
+      <h4>Stiker</h4>
+    </div>
+
+        <div class="konten-itemlabel3">
+      <div class="image-wrapperlabel3">
+        <img src="img/wrapping.jpeg" alt="">
+        <div class="deskripsi">Desain label pada wrapping paper untuk memberikan sentuhan akhir yang elegan dan meningkatkan pengalaman unboxing produk.</div>
+      </div>
+      <h4>Wrapping Paper</h4>
+    </div>
+    <div class="konten-itemlabel4">
+      <div class="image-wrapperlabel4">
+        <img src="img/ht2.jpeg" alt="">
+        <div class="deskripsi">Hangtag ini dirancang dengan detail eksklusif untuk menambah kesan premium pada produk Anda. Material berkualitas, desain minimalis, dan warna elegan mencerminkan identitas merek yang berkelas.</div>
+      </div>
+      <h4>Hangtag</h4>
+    </div>
+    <div class="konten-itemlabel5">
+      <div class="image-wrapperlabel5">
+        <img src="img/ht3.jpeg" alt="">
+        <div class="deskripsi">Desain bold, khas streetwear, jadi statement yang merepresentasikan gaya dan sikap brand</div>
+      </div>
+      <h4>Hangtag</h4>
+    </div>
+  
+    <div class="konten-itemlabel6">
+      <div class="image-wrapperlabel6">
+        <img src="img/ht4.jpeg" alt="">
+        <div class="deskripsi">Dirancang untuk produk bergaya santai, hangtag ini menampilkan desain yang simple namun tetap menarik. </div>
+      </div>
+      <h4>Hangtag</h4>
+    </div>
+  
+  
+</section>
+
+<section class="halaman-proyek" id="halaman-sosmed">
+  <button class="btn-kembali" onclick="kembali()">&larr; Kembali</button>
+  <div class="grid-konten">
+    <div class="konten-itemsosmed">
+      <div class="image-wrappersosmed"> 
+        <img src="img/feeds.jpeg" alt="">
+        <div class="deskripsi">Desain untuk branding Instagram</div>
+      </div>
+      <h4>Feed Instagram</h4>
+    </div>
+  </div>
+</section>
+
+<section class="halaman-proyek" id="halaman-foto">
+  <button class="btn-kembali" onclick="kembali()">&larr; Kembali</button>
+  <div class="grid-konten">
+    <div class="konten-itemproduk">
+      <div class="image-wrapperproduk">
+        <img src="img/produk.jpeg" alt="">
+        <div class="deskripsi">Foto produk dengan pencahayaan optimal, sudut pengambilan menarik, dan latar bersih yang menonjolkan detail produk.</div>
+      </div>
+      <h4>Foto Produk</h4>
+    </div>
+
+<div class="video-wrapper">
+    <div class="video-container">
+  <video id="myVideo" poster="img/vidproduk.png" preload="metadata">
+    <source src="video/videolabel.mp4" type="video/mp4">
+  </video>
+  <div id="playBtn" class="play-button">&#9658;</div> <!-- segitiga play -->
+  <div class="video-title"> Video Produk Label</div>
+      </div>
+    </div>
+</div>
+</section>
+
+<section class="halaman-proyek" id="halaman-poster">
+  <button class="btn-kembali" onclick="kembali()">&larr; Kembali</button>
+  <div class="grid-konten">
+    <div class="konten-itemposter1">
+      <div class="image-wrapperposter1">
+        <img src="img/poster1.png" alt="">
+        <div class="deskripsi">Tingkatkan daya tarik visual promosi dengan poster digital berkualitas tinggi. </div>
+      </div>
+      <h4>Poster Digital</h4>
+    </div>
+
+        <div class="konten-itemposter2">
+      <div class="image-wrapperposter2">
+        <img src="img/poster2.png" alt="">
+        <div class="deskripsi">Disusun secara visual dengan komposisi warna dan tipografi yang kuat, menciptakan kesan menarik di setiap tampilannya.</div>
+      </div>
+      <h4>Poster Digital</h4>
+    </div>
+    <div class="konten-itemposter3">
+      <div class="image-wrapperposter3">
+        <img src="img/poster3.jpeg" alt="">
+        <div class="deskripsi">Dirancang untuk menyampaikan informasi secara ringkas dan menarik.</div>
+      </div>
+      <h4>Poster Digital</h4>
+    </div>
+  </div>
+</section>
+
+    <!-- SECTION 6 - KONTAK -->
+    <section id="kontak">
+      <div class="marquee-wrapper">
+
+  <div class="marquee marquee-right">
+    <div class="marquee-track" id="track1">
+      <a href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com" class="blue">Email</a>
+      <a href="https://wa.me/6285536581528" class="pink" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/gisyaard._" class="blue" target="_blank">Instagram</a>
+      <a href="https://t.me/gisyaardia" class="yellow" target="_blank">Telegram</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com" class="blue">Email</a>
+      <a href="https://wa.me/6285536581528" class="pink" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/gisyaard._" class="blue" target="_blank">Instagram</a>
+      <a href="https://t.me/gisyaardia" class="yellow" target="_blank">Telegram</a>
+    </div>
+  </div>
+
+  <div class="marquee marquee-left">
+    <div class="marquee-track" id="track2">
+      <a href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com" class="blue" >Email</a>
+      <a href="https://wa.me/6285536581528" class="pink" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/gisyaard._" class="blue" target="_blank">Instagram</a>
+      <a href="https://t.me/gisyaardia" class="yellow" target="_blank">Telegram</a>
+      <a href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com" class="blue">Email</a>
+      <a href="https://wa.me/6285536581528" class="pink" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/gisyaard._" class="blue" target="_blank">Instagram</a>
+      <a href="https://t.me/gisyaardia" class="yellow" target="_blank">Telegram</a>
+    </div>
+  </div>
+
+</div>
+
+    <!-- Main contact box -->
+    <div class="contact-box">
+      <h2 class="font-abril">Hubungi Saya</h2>
+
+      <div class="contact-item">
+        <img src="img/gmail1.png" alt="Email" />
+        <a
+          href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com"
+          target="_blank"
+        >
+          Email: ristantyagisya@gmail.com
+        </a>
+      </div>
+
+      <div class="contact-item">
+        <img src="img/whatsapp.png" alt="WhatsApp" />
+        <a href="https://wa.me/6285536581528" target="_blank">WhatsApp: 0855-3658-1528</a>
+      </div>
+
+      <div class="contact-item">
+        <img src="img/instagram.png" alt="Instagram" />
+        <a href="https://instagram.com/gisyaard._" target="_blank"
+          >Instagram: @gisyaard._</a
+        >
+      </div>
+
+      <div class="contact-item">
+        <img src="img/telegram.png" alt="Telegram" />
+        <a href="https://t.me/gisyaardia" target="_blank">Telegram: @gisyaardia</a>
+      </div>
+    </div>
+      </section>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+    <button class="scroll-top-btn" onclick="scrollToTop()">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 15l8-8 8 8H4z"/>
+      </svg>
+      Atas
+    </button>
+
+    <!-- Teks footer -->
+    <div class="footer-text">
+      © 2025 Ristantya Gisya. All rights reserved.
+    </div>
+    </footer>
+
+
+
+    <script>
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+
+  const sections = document.querySelectorAll(".section");
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          sectionObserver.unobserve(entry.target); // hanya sekali tampil
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+    }
+  );
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+
+const flipSection = document.getElementById("flip-section");
+const cards = document.querySelectorAll(".flip-card");
+
+let flipObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Reset animasi
+      cards.forEach(card => {
+        card.classList.remove("flip-final", "flip-start");
+        void card.offsetWidth; // force reflow
+        card.classList.add("flip-start");
+
+        setTimeout(() => {
+          card.classList.remove("flip-start");
+          card.classList.add("flip-final");
+        }, 2000);
+      });
+    } else {
+      cards.forEach(card => {
+        card.classList.remove("flip-start", "flip-final");
+        card.querySelector(".flip-card-inner").style.transform = "rotateY(0deg)";
+      });
+    }
+  });
+}, {
+  threshold: 0.5
+});
+
+flipObserver.observe(flipSection);
+
+
+const counters = document.querySelectorAll('.number');
+
+function animateCounters() {
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target');
+    const isNegative = counter.hasAttribute('data-negative');
+    const endValue = isNegative ? -target : target;
+    const step = endValue / 100;
+    let current = 0;
+
+    const updateCount = () => {
+      current += step;
+      if ((isNegative && current > endValue) || (!isNegative && current < endValue)) {
+        counter.textContent = Math.round(current);
+        requestAnimationFrame(updateCount);
+      } else {
+        counter.textContent = endValue;
+      }
+    };
+
+    updateCount();
+  });
+}
+
+const counterSection = document.getElementById('counterSection');
+
+const counterObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        animateCounters();
+      } else {
+      
+        counters.forEach(counter => {
+          counter.textContent = "0";
+        });
+      }
+    });
+  },
+  { threshold: 0.5 }
+);
+
+if (counterSection) {
+  counterObserver.observe(counterSection);
+}
+
+  function duplicateContent(id) {
+    const track = document.getElementById(id);
+    const clone = track.cloneNode(true);
+    track.parentNode.appendChild(clone);
+  }
+
+  duplicateContent('track1');
+  duplicateContent('track2');
+  
+  function duplicateTrack(id) {
+  const track = document.getElementById(id);
+  const clone = track.cloneNode(true);
+  Array.from(clone.children).forEach(child => track.appendChild(child.cloneNode(true)));
+}
+
+    function scrollToTop() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+       function bukaProyek(kategori) {
+  document.querySelectorAll('.halaman-proyek').forEach(sec => {
+    sec.classList.remove('active');
+  });
+  const id = 'halaman-' + kategori;
+  const target = document.getElementById(id);
+  if (target) {
+    target.classList.add('active');
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+
+   function kembali() {
+  document.querySelectorAll('.halaman-proyek').forEach(sec => {
+    sec.classList.remove('active');
+  });
+
+  const proyekKotak = document.querySelector('.kotak-container');
+  if (proyekKotak) {
+    proyekKotak.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+const video = document.getElementById("myVideo");
+const playBtn = document.getElementById("playBtn");
+
+playBtn.addEventListener("click", function () {
+  video.play().then(() => {
+    playBtn.classList.add("hidden");
+  }).catch(err => {
+    console.error("Gagal memulai video:", err);
+  });
+});
+
+video.addEventListener("pause", function () {
+  playBtn.classList.remove("hidden");
+});
+
+video.addEventListener("ended", function () {
+  video.currentTime = 0;
+  video.load(); // jika kamu ingin poster muncul kembali
+  playBtn.classList.remove("hidden");
+});
+
+const textElements = document.querySelectorAll('.fade-in-text');
+
+const textObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible'); // agar bisa muncul lagi saat kembali
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+textElements.forEach(el => textObserver.observe(el));
+
+
+  const toggleBtn = document.getElementById('themeToggle');
+  const body = document.body;
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+
+</script>
+  </body>
+</html>

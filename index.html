@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Opening Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+        font-family: sans-serif;
+        color: white;
+        overflow: hidden;
+      }
+
+      body {
+        background: linear-gradient(270deg, #3b2c23, #ff69b4, #ffafbd, #2f1e1e);
+        background-size: 800% 800%;
+        animation: gradientFlow 18s ease infinite;
+        position: relative;
+      }
+
+      @keyframes gradientFlow {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .intro-text {
+        position: absolute;
+        top: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 20;
+        text-align: center;
+        pointer-events: none;
+        animation: fadeInText 1.5s ease-out forwards;
+        opacity: 0;
+      }
+
+      .intro-text h1 {
+        font-family: "Smooch Sans", sans-serif;
+        font-size: 3.5rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Sparkle Line */
+      .intro-text h1::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 0%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(255, 255, 255, 0) 100%
+        );
+        transform: skewX(-20deg);
+        animation: sparkle 2.8s ease-in-out infinite;
+      }
+
+      @keyframes fadeInText {
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes sparkle {
+        0% {
+          left: -100%;
+        }
+        50% {
+          left: 100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .blur-overlay {
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        width: 140%;
+        height: 140%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.06),
+          transparent 70%
+        );
+        backdrop-filter: blur(20px);
+        z-index: 0;
+      }
+
+      .track-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        transform: translateY(-50%);
+        overflow: hidden;
+        z-index: 1;
+      }
+
+      .card-track {
+        display: flex;
+        gap: 10px;
+        width: fit-content;
+        animation: slideLeft 3s linear infinite;
+      }
+
+      @keyframes slideLeft {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .card {
+        width: 200px;
+        height: 300px;
+        perspective: 1000px;
+        flex-shrink: 0;
+      }
+
+      .card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 1s ease;
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+
+      .card-front img,
+      .card-back img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .card-back {
+        transform: rotateY(180deg);
+        z-index: 2;
+      }
+
+      .paused {
+        animation: none !important;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .highlight-card {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        transition: transform 1s ease;
+      }
+
+      .highlight-card .card-inner {
+        width: 100%;
+        height: 100%;
+      }
+
+      .highlight-card .card-front img,
+      .highlight-card .card-back img {
+        object-fit: cover;
+        border-radius: 0;
+      }
+
+      .raised .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .enlarged {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 200px;
+        height: 400px;
+        transform: translate(-50%, -50%);
+        z-index: 999;
+        transition: transform 1s ease;
+      }
+
+      .enlarged .card-inner {
+        width: 100%;
+        height: 100%;
+      }
+
+      .enlarged .card-front img,
+      .enlarged .card-back img {
+        object-fit: cover;
+        border-radius: 16px;
+      }
+
+      .enlarged-flip .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .transition-screen {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        background-color: #f1d1e9;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+        z-index: 1000;
+        transition: transform 0.6s ease-out, opacity 0.4s ease-out 0.6s;
+        pointer-events: none;
+      }
+
+      .transition-screen.active {
+        transform: translate(-50%, -50%) scale(20);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Blur efek -->
+    <div class="blur-overlay"></div>
+
+    <div class="intro-text">
+      <h1>LET'S GET STARTED</h1>
+    </div>
+
+    <!-- Track kartu -->
+    <div class="track-wrapper">
+      <div class="card-track" id="cardTrack">
+        <!-- Kartu 1–4 -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+
+        <!-- Kartu spesial -->
+        <div class="card" id="specialCard">
+          <div class="card-inner" id="specialInner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" alt="Depan 5" />
+            </div>
+            <div class="card-back">
+              <img src="imgopening/back.png" alt="PORTFOLIO" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Duplikat -->
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="imgopening/cardopening.png" />
+            </div>
+            <div class="card-back"><img src="imgopening/back.png" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="transition-screen" id="transitionScreen"></div>
+
+    <!-- Script Transisi -->
+    <script>
+      setTimeout(() => {
+        const track = document.getElementById("cardTrack");
+        const specialCard = document.getElementById("specialCard");
+        const transitionScreen = document.getElementById("transitionScreen");
+
+        track.classList.add("paused");
+
+        setTimeout(() => {
+          specialCard.classList.add("enlarged");
+
+          setTimeout(() => {
+            specialCard.classList.add("enlarged-flip");
+
+            setTimeout(() => {
+              transitionScreen.classList.add("active");
+            }, 1200);
+
+            setTimeout(() => {
+              window.location.href = "portfolio.html";
+            }, 2200);
+          }, 800);
+        }, 600);
+      }, 1900);
+    </script>
+  </body>
+</html>
