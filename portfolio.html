@@ -58,17 +58,19 @@
     }
 
     /* === NAVIGATION === */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1vw 5vw;
-      background-color: #ffdee9;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
+   .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 5vw;
+    background-color: #ffdee9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Ganti sticky jadi fixed */
+    top: 0;
+    left: 0;
+    width: 100%; /* Wajib saat pakai fixed */
+    z-index: 999;
+  }
 
     .logo {
       font-family: 'Teko', sans-serif;
@@ -208,7 +210,7 @@
     /* === CARD === */
     .card img {
       position: absolute;
-      top: -1rem;
+      top: 3rem;
       right: 1rem;
       width: 250px;
       border-radius: 1rem;
@@ -242,15 +244,12 @@
 
     .slider-track {
       display: flex;
-      animation: marquee 15s linear infinite;
     }
     .slider-track2 {
       display: flex;
-      animation: marquee 10s linear infinite;
     }
     .slider-track3 {
       display: flex;
-      animation: marquee 5s linear infinite;
     }
 
     .slider-track span, .slider-track2 span, .slider-track3 span {
@@ -788,8 +787,8 @@
       }
 
       .contact-item img {
-        width: 2.4vw;
-        height: 2.4vw;
+        width: 4vw;
+        height: 4vw;
         filter: drop-shadow(0 0 0.2vw #0005);
       }
 
@@ -1651,25 +1650,25 @@
           href="https://mail.google.com/mail/?view=cm&to=ristantyagisya@gmail.com"
           target="_blank"
         >
-          Email: ristantyagisya@gmail.com
+         ristantyagisya@gmail.com
         </a>
       </div>
 
       <div class="contact-item">
         <img src="img/whatsapp.png" alt="WhatsApp" />
-        <a href="https://wa.me/6285536581528" target="_blank">WhatsApp: 0855-3658-1528</a>
+        <a href="https://wa.me/6285536581528" target="_blank"> 0855-3658-1528</a>
       </div>
 
       <div class="contact-item">
         <img src="img/instagram.png" alt="Instagram" />
         <a href="https://instagram.com/gisyaard._" target="_blank"
-          >Instagram: @gisyaard._</a
+          >@gisyaard._</a
         >
       </div>
 
       <div class="contact-item">
         <img src="img/telegram.png" alt="Telegram" />
-        <a href="https://t.me/gisyaardia" target="_blank">Telegram: @gisyaardia</a>
+        <a href="https://t.me/gisyaardia" target="_blank">@gisyaardia</a>
       </div>
     </div>
       </section>
